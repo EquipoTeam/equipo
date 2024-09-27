@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DG - DARK COMPUTERS</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">    <link rel="stylesheet" href="../../static/css/login.css">
+    <link rel="icon" href="../static/img/logo.png" type="image/x-icon">
+</head> 
+<body>
+    <header>
+        <div>
+          <div class="container hero align-items-center">
+                <div class="container-logo">
+                    <img src="../static/img/logo.png" class="logoempresa">
+                    <h4><a href="/">DARK COMPUTERS</a></h4> 
+                </div>
+                <div class="container-user text-white">
+                    <h5>Bienvenido, {{ current_user.fullname }}</h5>
+                    <a href="/auth/login.html" class="fa-solid fa-user"></a>            
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <a class="btn btn-secondary" href="{{ url_for('logout') }}">Cerrar Sesion</a> 
+                </div>
+            </div>
+        </div>   
+    </header>
+
+    <!--BARRA DE NAVEGACION-->
+    <nav class="container">
+        <header class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
+            
+          <div class="d-flex flex-grow-1">
+                          
+            <ul class="nav col-12 col-md-auto mb-2 mb-md-0 flex-grow-1 justify-content-start">
+              <li><a href="home.html" class="nav-link px-2">Inicio</a></li>
+              <li><a href="Monitores.html" class="nav-link px-2">Monitores</a></li>
+              <li><a href="#" class="nav-link px-2">Teclados</a></li>
+              <li><a href="#" class="nav-link px-2">Motherboards</a></li>
+              <li><a href="#" class="nav-link px-2">Graficas</a></li>
+              <li><a href="#" class="nav-link px-2">Sobre Nosotros</a></li>
+            </ul>
+          </div>
+          
+            <div>
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
+                    <input type="search" class="form-control form-control-dark text-white" placeholder="Buscar..." aria-label="Buscar">
+                </form>
+            </div>
+
+        <button type="button" class="btn btn-outline-primary search-button-margin">Buscar</button>
+
+        </header>
+    </nav>
+
+    <!--BANNER-->
+    <section class="banner">
+        <div class="content-banner">
+            <h2>Las Mejores Computadoras</h2>
+            <h2>Con Mucho RGB <br>Perifericos Competitivos</h2> 
+        </div>
+    </section>
+
+    <main class="main-content">
+        <section class="container container-features">
+            <div class="card-feature">
+                <i class="bi bi-airplane"></i>
+                <div class="feature-content">
+                    <span>Envio Gratuito a Nivel Nacional</span>
+                    <p>En Pedido Superior a $2000</p>
+                </div>
+            </div>
+                    <div class="card-feature">
+                        <i class="bi bi-motherboard"></i>
+                        <div class="feature-content">
+                            <span>¿Algun Defecto?</span>
+                            <p>100% El cambio del componente</p>
+                        </div>
+                    </div>
+                            <div class="card-feature">
+                                <i class="bi bi-gift"></i>
+                                <div class="feature-content">
+                                    <span>Descuentos Especiales</span>
+                                    <p>Registrate y Obtendras 40% de Descuento</p>
+                                </div>
+                            </div>
+
+                                    <div class="card-feature">
+                                        <i class="bi bi-headset"></i>
+                                        <div class="feature-content">
+                                            <span>Servicio Al Cliente</span>
+                                            <p>Llamanos 24/7 al 8123377621</p>
+                                        </div>
+                                    </div>
+        </section>
+
+                                                <section class="container top-products">
+                                                    <h1 class="heading-1">Mejores Productos</h1>
+
+                                                    <div class="container-options">
+                                                    <span clasa="active">Destacados</span>
+                                                    <span>Mas Recientes</span>
+                                                    <span>Mejores Vendidos</span>
+                                                </div>
+
+                                                    <div class="container-products">
+                                                        <div class="container-products" id="productos-container">
+                                                            <!-- Aquí se cargarán los productos mediante JavaScript -->
+                                                        </div>
+                                                    </section>
+                                                        
+                                                
+                                                <section class="container blogs">
+                                                    <h1 class="heading-1">Ultimos Blogs</h1>
+
+                                                <div class="container-blogs">
+                                                    <div class="card-blog">
+                                                        <div class="container-img">
+                                                            <img src="../static/img/ROG BLOG I.jpg" alt="ROG BLOG I">
+                                                            <div class="button-group-blog">
+                                                                <span>
+                                                                    <i class="bi bi-search"></i>
+                                                                </span>
+                                                                <span>
+                                                                    <i class="bi bi-link-45deg"></i>
+                                                                </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="content-blog">
+                                                                <h3>ROG Strix Go: juegos por cable en casa o fuera de ella </h3>
+                                                                <span>07 Diciembre 2022</span>
+                                                                <p>
+                                                                    Si le gusta el estilo y el conjunto de funciones de la línea Strix Go 
+                                                                    pero no necesita conectividad inalámbrica, los auriculares ROG Strix Go tienen exactamente lo que necesita. 
+                                                                    Su conector USB tipo C permite audio de alta calidad a través del DAC incorporado, 
+                                                                    canalizando un sonido nítido a sus cámaras herméticas que albergan controladores ASUS Essence de 40 mm. 
+                                                                </p>
+                                                                <div class="btn-read-more">Leer Mas</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-blog">
+                                                            <div class="container-img">
+                                                                <img src="../static/img/ROG BLOG II.jpg" alt="ROG BLOG II">
+                                                                <div class="button-group-blog">
+                                                                    <span>
+                                                                        <i class="bi bi-search"></i>
+                                                                    </span>
+                                                                    <span>
+                                                                        <i class="bi bi-link-45deg"></i>
+                                                                    </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="content-blog">
+                                                                    <h3>FSR VS RSR VS RIS: Uso de las Funciones de Mejora de Nitidez de ROG ALLY </h3>
+                                                                    <span>27 Febrero 2024</span>
+                                                                    <p>
+                                                                        El ROG Ally funciona con increíbles chips de AMD llamados serie Ryzen Z1, que no solo ofrecen un excelente rendimiento y eficiencia energética, 
+                                                                        sino que también vienen con numerosas tecnologías gráficas que pueden mejorar la imagen y hacer que tus juegos funcionen mejor. 
+                                                                        Hablemos de la diferencia entre algunas de estas funciones: AMD FidelityFX Super Resolución (FSR), 
+                                                                        AMD Radeon Super Resolución (RSR) y AMD Radeon Image Sharpening (RIS) y cuándo debe usar cada una.  
+                                                                    </p>
+                                                                    <div class="btn-read-more">Leer Mas</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-blog">
+                                                                <div class="container-img">
+                                                                    <img src="../static/img/ROG III BLOG.jpg" alt="ROG III BLOG">
+                                                                    <div class="button-group-blog">
+                                                                        <span>
+                                                                            <i class="bi bi-search"></i>
+                                                                        </span>
+                                                                        <span>
+                                                                            <i class="bi bi-link-45deg"></i>
+                                                                        </span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="content-blog">
+                                                                        <h3>Manténgase conectado: chips inalámbricos y selección de puertos</h3>
+                                                                        <span>02 Febrero 2024</span>
+                                                                        <p>
+                                                                            Lo más probable es que su computadora portátil actual use Wi-Fi 5, un estándar ahora congestionado que presenta dos bandas de frecuencia llenas de dispositivos inalámbricos, 
+                                                                            todos compitiendo por ese espectro limitado. Las computadoras portátiles ROG de 2022 y posteriores vienen equipadas con Wi-Fi 6E, el último estándar con acceso a la banda de 6GHz recientemente desbloqueada.   
+                                                                        </p>
+                                                                        <div class="btn-read-more">Leer Mas</div>
+                                                                    </div>
+                                                                </div>
+                                                    </div>
+
+                                                </section>
+                </main>
+
+                                            <footer class="footer">
+                                                <div class="container container-footer">
+                                                    <div class="menu-footer">
+                                                        <div class="contact-info">
+                                                            <p class="title-footer">Informacion de Contacto</p>
+                                                            <ul>
+                                                                <li>
+                                                                    Carr. Monterrey - Saltillo Km. 61.5, 
+                                                                    Bosques de Santa Catarina, 66359 Cdad. Santa Catarina, N.L.
+                                                                </li>
+                                                                <li>Telefono: 81-23-37-76-21</li>
+                                                                <li>Fax: 55522300</li>
+                                                                <li>Email UTSC: 22094@virtual.utsc.edu.mx</li>
+                                                            </ul>
+                                                            <div class="social-icons">
+                                                                <span class="Facebook"><i class="bi bi-facebook"></i></span>
+                                                                <span class="Twitter"><i class="bi bi-twitter-x"></i></span>
+                                                                <span class="Youtube"><i class="bi bi-youtube"></i></span>
+                                                                <span class="Twitch"><i class="bi bi-twitch"></i></span>
+                                                                <span class="Instagram"><i class="bi bi-instagram"></i></span>
+                                                                <span class="WhatsApp"><i class="bi bi-whatsapp"></i></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="information">
+                                                            <p class="title-footer">Informacion</p>
+                                                            <ul>
+                                                                <li><a href="#">Acerca de Nosotros</a></li>
+                                                                <li><a href="#">Informacion Delivery</a></li>
+                                                                <li><a href="#">Politicas de Privacidad</a></li>
+                                                                <li><a href="#">Terminos y Condiciones</a></li>
+                                                                <li><a href="#">Contactanos</a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <div class="my-account">
+                                                            <p class="title-footer">Mi cuenta</p>
+
+                                                            <ul>
+                                                                <li><a href="#">Mi Cuenta</a></li>
+                                                                <li><a href="#">Historial de Ordenes</a></li>
+                                                                <li><a href="#">Listas de Deseos </a></li>
+                                                                <li><a href="#">Boletin</a></li>
+                                                                <li><a href="#">Reembolsos</a></li>
+                                                            </ul>                                                        </div>
+
+                                                            <div class="newsletter">
+                                                                <p class="title-footer">Boletin Informativo</p>
+
+                                                                <div class="content">
+                                                                    <p>
+                                                                        Suscribete a Nuestros boletines ahora y 
+                                                                        mantente al dia con nuevos Perifericos y ofertas exclusivas de ROG
+                                                                    </p>
+                                                                    <button>Suscribete</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="copyright">
+                                                        <p>
+                                                            Desarrollado por Equipo1 &copy; 2024
+                                                        </p>
+
+                                                        <img src="../static/img/TIPO DE PAGOS.png" alt="Pagos">
+                                                    </div>
+                                                </div>
+                                            </footer>
+
+                                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script></body>
+                                            <script src="https://kit.fontawesome.com/fe98ca4959.js" crossorigin="anonymous"></script>
+                                            <script src="../static/productos.js"></script>
+                                        </body>
+                                        </html>
+

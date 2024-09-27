@@ -1,0 +1,41 @@
+{% extends './base.html' %}
+
+{% block title %}Acceso{% endblock %}
+
+{% block customCSS %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+<link rel="icon" href="../static/img/logo.png" type="image/x-icon">
+{% endblock %}
+
+{% block body %}
+<form class="form-signin" action="/login" method="POST">
+    <img class="mb-4" src="{{ url_for('static', filename='img/logo.png') }}" alt="" width="200" height="200">
+    {% with messages = get_flashed_messages() %}
+
+    {% if messages %}
+    <br />
+    {% for message in messages %}
+    <div class="alert alert-primary alert-dismissible" role="alert">
+        <strong>{{ message }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% endwith %}
+    <h1 class="h3 mb-3 fw-normal">Ingrese sus credenciales de acceso</h1>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="username" name="username" placeholder="User123">
+        <label for="username">Usuario</label>
+    </div>
+    <div class="form-floating">
+        <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
+        <label for="password">Contraseña</label>
+    </div>
+    <button class="btn btn-primary w-100 py-2" type="submit">Iniciar sesión</button>
+    <h5>¿No tienes una cuenta? <a href="{{ url_for('register') }}">Regístrate aquí</a></h5>
+
+       
+</form>
+{% endblock %}
